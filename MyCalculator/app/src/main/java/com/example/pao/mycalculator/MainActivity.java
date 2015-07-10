@@ -23,9 +23,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         txtResult = (TextView) findViewById(R.id.txt_result);
 
-
         int idList[] = {R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3, R.id.btn_4, R.id.btn_5, R.id.btn_6,R.id.btn_7, R.id.btn_8, R.id.btn_9,
-                R.id.btn_dot,R.id.btn_divition, R.id.btn_equal, R.id.btn_minus, R.id.btn_multiplication, R.id.btn_c,R.id.btn_plus};
+                R.id.btn_dot,R.id.btn_divition, R.id.btn_equal, R.id.btn_minus, R.id.btn_multiplication};
         for(int id: idList)
         {
             View v = (View) findViewById(id);
@@ -44,16 +43,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         NumberBf=Float.parseFloat(txtResult.getText().toString());
         operation = str;
-        txtResult.setText("0");
+        //txtResult.setText("0");
     }
     public void getKeyboard(String str)
     {
         String SrcCurrent= txtResult.getText().toString();
-
+        SrcCurrent+=str;
         if (SrcCurrent.equals("0"))
             SrcCurrent="";
-            SrcCurrent+=str;
-            txtResult.setText(SrcCurrent);
+        txtResult.setText(SrcCurrent);
     }
     public void mResult()
     {
@@ -116,7 +114,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             break;
         case R.id.btn_equal:
             mResult();
-            break;
         case R.id.btn_c:
             txtResult.setText("0");
             NumberBf=0;
@@ -125,7 +122,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         default:
             String numb=((Button)v).getText().toString();
             getKeyboard(numb);
-            break;
     }
 
     }
