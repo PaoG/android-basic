@@ -15,6 +15,6 @@ public class Item implements JSONPopulator{
     @Override
     public void populate(JSONObject data) {
     condition=new Condition();
-        condition.populate(data.optJSONObject("condition"));
+        condition.populate(data.optJSONObject("condition"));  // To obtain the  temperature from the JSONObject
     }
 }

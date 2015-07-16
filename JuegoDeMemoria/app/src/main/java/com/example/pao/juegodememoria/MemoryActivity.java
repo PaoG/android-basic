@@ -2,21 +2,13 @@ package com.example.pao.juegodememoria;
 
 import android.app.Activity;
 import android.os.*;
-
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-
 import java.util.Arrays;
 import java.util.Collections;
-
-
-
-import java.util.logging.LogRecord;
 
 
 public class MemoryActivity extends Activity {
@@ -40,7 +32,7 @@ public class MemoryActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final TableLayout tabla= new TableLayout(this);
+        final TableLayout tabla= new TableLayout(this); //Table
         final int tam=4;
         cartas= new Carta[tam*tam];
         for(int i=0; i<cartas.length; i++)
@@ -73,7 +65,7 @@ public class MemoryActivity extends Activity {
         {
             this.imagen=imagen;
             this.boton= new ImageButton(MemoryActivity.this);
-            this.boton.setLayoutParams(new TableRow.LayoutParams(200, 200));
+            this.boton.setLayoutParams(new TableRow.LayoutParams(250, 350));
             this.boton.setScaleType(ImageView.ScaleType.FIT_XY);
             this.boton.setImageResource(R.drawable.linea);
             this.boton.setOnClickListener(this);
@@ -94,15 +86,7 @@ public class MemoryActivity extends Activity {
                 onCartaDescubierta(this);
             }
         }
-        private Carta [] crearCeldas(final int cont)
-        {
-            final Carta [] array= new Carta[cont];
-            for(int i=0; i<array.length; i++)
-            {
-                array[i]= new Carta(CARTA_RESOURCES[i/2]);
-            }
-            return array;
-        }
+
         public void onCartaDescubierta(final Carta celda)
         {
             if(visible==null)

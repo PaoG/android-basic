@@ -43,14 +43,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         NumberBf=Float.parseFloat(txtResult.getText().toString());
         operation = str;
-        //txtResult.setText("0");
+        txtResult.setText("0");
     }
     public void getKeyboard(String str)
     {
         String SrcCurrent= txtResult.getText().toString();
-        SrcCurrent+=str;
         if (SrcCurrent.equals("0"))
             SrcCurrent="";
+        SrcCurrent+=str;
         txtResult.setText(SrcCurrent);
     }
     public void mResult()
@@ -73,10 +73,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         {
             result= NumAf/NumberBf;
         }
-        if(operation.equals(""))
-        {
-            result=0;
-        }
+
         txtResult.setText(String.valueOf(result));
     }
 

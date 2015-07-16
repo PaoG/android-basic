@@ -1,5 +1,5 @@
 package com.example.pao.todolistfinal;
-import android.app.Activity;
+
 import android.app.ListActivity;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -10,13 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
-import java.util.ArrayList;
+
 
 
 public class MainActivity extends ListActivity {
@@ -94,6 +92,7 @@ public class MainActivity extends ListActivity {
 
         AdapterView.AdapterContextMenuInfo info= (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
         int selectedIndex=info.position;
+        int itemId=item.getItemId();
         if(item.getTitle().equals("Delete Task"))
         {
            toDoC.getWritableDatabase().delete(DataBaseToDo.TABLE_NAME, DataBaseToDo._ID+ "=?",new String[] { String.valueOf(selectedIndex) });
@@ -140,7 +139,7 @@ public class MainActivity extends ListActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Insert several artist records
+    // Insert item records
     private void insertToDo( String textToDo) {
 
         ContentValues values = new ContentValues();
