@@ -78,7 +78,7 @@ public class WeatherService {
                     channel.populate(queryResults.optJSONObject("results").optJSONObject("channel"));
                     callback.serviceSuccess(channel);
                 } catch (JSONException e) {
-                    callback.serviceFailure(e);
+                    callback.serviceFailure(e); //
                 }
             }
         }.execute(location);
