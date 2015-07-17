@@ -35,7 +35,7 @@ public class WeatherActivity extends ActionBarActivity implements WeatherService
         dialog = new ProgressDialog(this);
         dialog.setMessage("Cargando..");
         dialog.show();
-        service.refreshWeather("Sydney, Australia");
+        service.refreshWeather("Miami, USA");
 
 
         Button fixButton = (Button) findViewById(R.id.btnSearch);

@@ -71,7 +71,7 @@ public class WeatherService {
                     int count=queryResults.optInt("count");
                     if(count==0)
                     {
-                        callback.serviceFailure(new LocationWeatherException("No se encontro informacion para "+ location));
+                        callback.serviceFailure(new LocationWeatherException("The informacion for the"+ location+"was not found"));
                         return;
                     }
                     Channel channel= new Channel();

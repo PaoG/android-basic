@@ -65,7 +65,7 @@ public class MemoryActivity extends Activity {
         {
             this.imagen=imagen;
             this.boton= new ImageButton(MemoryActivity.this);
-            this.boton.setLayoutParams(new TableRow.LayoutParams(250, 350));
+            this.boton.setLayoutParams(new TableRow.LayoutParams(260, 360));
             this.boton.setScaleType(ImageView.ScaleType.FIT_XY);
             this.boton.setImageResource(R.drawable.linea);
             this.boton.setOnClickListener(this);
